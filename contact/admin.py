@@ -5,10 +5,10 @@ from contact import models
 
 @admin.register(models.Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = 'first_name', 'last_name', 'phone',
-    ordering = 'id',
+    list_display = 'first_name', 'last_name', 'phone', 'show',
+    ordering = '-id',
     list_filter = 'created_date',
-    search_fields = 'id', 'first_name', 'last_name',
+    search_fields = 'id', 'first_name', 'last_name', 
     # list_per_page = 1
     
 @admin.register(models.Category)
