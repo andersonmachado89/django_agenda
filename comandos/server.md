@@ -74,7 +74,7 @@ git push agendarepo main -u # erro
 No seu computador local
 
 ```
-git remote add agendarepo usuario@IP_SERVIDOR:~/agendarepo
+git remote add agendarepo anderson@146.148.66.164:~/agendarepo
 # caso esteja com o projeto no windows é preciso adicionar a chave ssh na cloud
 # e posteriormente configurar a conexão ssh com o servidor.
 # obs: usuario da chave pub precisa ser o mesmo do user da server na cloud
@@ -146,4 +146,20 @@ client_max_body_size 30M;
 
 ```
 sudo systemctl restart nginx
+
 ```
+
+# Comitando do local e do server
+
+```
+Sempre alterar o projeto no local
+Depois de alterado o projeto no local, adicionar os arquivos e comitar
+git add . (-f file)
+git commit -m "message"
+git push origin main
+git push repo main
+
+```
+# No servidor
+
+git pull agendarepo main
