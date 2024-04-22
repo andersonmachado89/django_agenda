@@ -14,7 +14,7 @@ python -c "import string as s;from secrets import SystemRandom as SR;print(''.jo
 ## Criando sua chave SSH
 
 ```
-ssh-keygen -C 'COMENTÁRIO'
+ssh-keygen -C 'anderson'
 ```
 
 ## No servidor
@@ -75,6 +75,9 @@ No seu computador local
 
 ```
 git remote add agendarepo usuario@IP_SERVIDOR:~/agendarepo
+# caso esteja com o projeto no windows é preciso adicionar a chave ssh na cloud
+# e posteriormente configurar a conexão ssh com o servidor.
+# obs: usuario da chave pub precisa ser o mesmo do user da server na cloud
 git push agendarepo main
 ```
 
@@ -91,11 +94,11 @@ git pull agendarepo main
 sudo -u postgres psql
 psql -h localhost -p 5432 -U postgres
 
-postgres=# create role usuario_agenda with login superuser createdb createrole password 'senha_usuario_agenda';
+postgres=# create role anderson with login superuser createdb createrole password 'machado';
 CREATE ROLE
-postgres=# create database projeto_agenda with owner usuario_agenda;
+postgres=# create database projeto_agenda with owner anderson;
 CREATE DATABASE
-postgres=# grant all privileges on database projeto_agenda to usuario_agenda;
+postgres=# grant all privileges on database projeto_agenda to anderson;
 GRANT
 postgres=# \q
 
